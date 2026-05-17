@@ -3,25 +3,52 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>...</title> <!-- Назва вкладки в браузері -->
+    <title>...</title>
     <style>
         body {
-            background-color: #050505; /* Майже цілковита темрява */
-            color: #e0e0e0; /* Тьмяно-білий текст, щоб не різав очі */
+            background-color: black;
+            margin: 0;
+            height: 100vh;
             display: flex;
             justify-content: center;
             align-items: center;
-            height: 100vh;
-            margin: 0;
-            font-family: 'Courier New', Courier, monospace; /* Хакерський/друкарський шрифт */
+            overflow: hidden;
+        }
+
+        .typewriter {
+            color: white;
+            font-family: monospace;
             font-size: 24px;
-            user-select: none; /* Гравець не зможе виділити текст мишкою */
+            letter-spacing: 2px;
+            /* Ефект друку: змінюємо ширину тексту від 0 до 100% */
+            white-space: nowrap;
+            overflow: hidden;
+            width: 0;
+            animation: typing 2s steps(9) forwards;
+        }
+
+        /* Замість риски робимо крапку-курсор, яка блимає */
+        .typewriter::after {
+            content: '.';
+            animation: blink 0.8s infinite;
+        }
+
+        /* Анімація появи літер */
+        @keyframes typing {
+            from { width: 0; }
+            to { width: 105px; } /* Точна ширина під фразу "You cant" */
+        }
+
+        /* Анімація блимання крапки */
+        @keyframes blink {
+            0%, 100% { opacity: 0; }
+            50% { opacity: 1; }
         }
     </style>
 </head>
 <body>
 
-    You cant.
+    <div class="typewriter">You cant</div>
 
 </body>
 </html>
