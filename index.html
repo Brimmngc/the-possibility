@@ -20,26 +20,25 @@
             font-family: monospace;
             font-size: 24px;
             letter-spacing: 2px;
-            /* Ефект друку: змінюємо ширину тексту від 0 до 100% */
             white-space: nowrap;
             overflow: hidden;
             width: 0;
-            animation: typing 2s steps(9) forwards;
+            /* Анімація триває 2 секунди, робить рівно 8 кроків і зупиняється на фіналі */
+            animation: typing 2s steps(8) forwards;
         }
 
-        /* Замість риски робимо крапку-курсор, яка блимає */
+        /* Мерехтлива крапка-курсор */
         .typewriter::after {
             content: '.';
             animation: blink 0.8s infinite;
         }
 
-        /* Анімація появи літер */
+        /* 8ch означає "ширина рівно у 8 символів" */
         @keyframes typing {
             from { width: 0; }
-            to { width: 105px; } /* Точна ширина під фразу "You cant" */
+            to { width: 8ch; }
         }
 
-        /* Анімація блимання крапки */
         @keyframes blink {
             0%, 100% { opacity: 0; }
             50% { opacity: 1; }
