@@ -7,47 +7,49 @@
     <style>
         body {
             background-color: black;
-            margin: 0;
-            height: 100vh;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            overflow: hidden;
-        }
-
-        .typewriter {
             color: white;
             font-family: monospace;
-            font-size: 24px;
-            letter-spacing: 2px;
-            white-space: nowrap;
-            overflow: hidden;
-            width: 0;
-            /* Анімація триває 2 секунди, робить рівно 8 кроків і зупиняється на фіналі */
-            animation: typing 2s steps(8) forwards;
+            margin: 0;
+            padding: 40px 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center; /* Центрує все по горизонталі */
+            min-height: 100vh;
+            box-sizing: border-box;
         }
 
-        /* Мерехтлива крапка-курсор */
-        .typewriter::after {
-            content: '.';
-            animation: blink 0.8s infinite;
+        /* Стилі для картинки */
+        .horror-image {
+            max-width: 300px; /* Обмежує максимальну ширину картинки */
+            width: 100%;       /* Робить її адаптивною під мобільні */
+            height: auto;
+            margin-bottom: 40px; /* Відступ між картинкою і текстом нижче */
+            display: block;
         }
 
-        /* 8ch означає "ширина рівно у 8 символів" */
-        @keyframes typing {
-            from { width: 0; }
-            to { width: 10ch; }
-        }
-
-        @keyframes blink {
-            0%, 100% { opacity: 0; }
-            50% { opacity: 1; }
+        /* Блок для великої кількості тексту */
+        .text-container {
+            max-width: 600px;    /* Щоб текст не розповзався на весь широкий монітор, а читався як книга */
+            width: 100%;
+            font-size: 16px;
+            line-height: 1.6;    /* Комфортна відстань між рядками */
+            letter-spacing: 1px;
+            text-align: justify; /* Вирівнювання тексту по ширині (можна змінити на center або left) */
+            white-space: pre-line; /* Магія: зберігає твої переноси рядків (Enter) з коду */
         }
     </style>
 </head>
 <body>
 
-    <div class="typewriter">You cant</div>
+    <img src="твоя_картинка.png" alt="???" class="horror-image">
+
+    <div class="text-container">
+        Тут починається твій довгий текст.
+        
+        Завдяки налаштуванню "pre-line", кожен твій абзац, який ти почнеш з нового рядка прямо тут в HTML-коді, так само відобразиться і на сайті.
+        
+        Можеш писати сюди скільки завгодно історій, логів чи крипових послань. Текст буде акуратно гортатися вниз, якщо його стане занадто багато.
+    </div>
 
 </body>
 </html>
